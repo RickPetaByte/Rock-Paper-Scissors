@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./style/style.css">
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
         <title>Rock Paper Scissors</title>
     </head>
     <body>
@@ -15,23 +14,62 @@
                         <span>rock <br> paper <br> scissors</span>
                     </div>
                     <div class="rps__header-score">
-                        <span>score</span>
+                        <span>my score</span>
                         <br>
                         <span id="score">0</span>
                     </div>
                 </div>
                 <div class="rps__game">
-                    <!-- <i class="fa-solid fa-hand"></i> -->
-                    <!-- <i class="fa-solid fa-hand-scissors"></i> -->
-                    <div class="rps__game-paper"></div>
-                    <div class="rps__game-scissor"></div>
-                    <div class="rps__game-stone"></div>
+                    <div class="rps__game-container">
+                        <div id="paper" class="rps__game-paper">
+                            <div  class="rps__game-paper-content">
+                                <img src="./img/scroll.svg" alt="paper">
+                            </div>
+                        </div>
+                        <div id="scissors" class="rps__game-scissor">
+                            <div class="rps__game-scissor-content">
+                                <img src="./img/scissors.svg" alt="scissors">
+                            </div>
+                        </div>
+                        <div id="rock" class="rps__game-rock">
+                            <div id class="rps__game-rock-content">
+                                <img src="./img/stone.svg" alt="rock">
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="rps__prompt">
+                        <div id="winmessage" class="rps__prompt-win">
+                            
+                            <div>
+                                <span>You win! </span>
+                                <span id="winuser"></span> beats <span id="wincomputer"></span>
+                            </div>
+                            <dotlottie-wc
+                                src="https://lottie.host/81b486dd-351e-4a03-bd88-547c213e92e4/oERCLFiSNT.lottie"
+                                style="width: 250px;height: 250px;margin: 0 auto;"
+                                autoplay
+                                loop
+                                id="lottie"
+                            ></dotlottie-wc>
+                        </div>
+                        <div id="tiemessage" class="rps__prompt-tie"><span>It's a tie!</span></div>
+                        <div id="lossmessage" class="rps__prompt-loss"><span>You lose! </span><span><span id="lossuser"></span> beats <span id="losscomputer"></span></span></div>
+                    </div>
+                    
+                    <div class="rps__result">
+                        <span>Computer score:<span id="computerscore">0</span></span>
+                    </div>
                 </div>
             </div>
         </div>
         
         <script src="./js/main.js"></script>
+        <script
+            src="https://unpkg.com/@lottiefiles/dotlottie-wc@latest/dist/dotlottie-wc.js"
+            type="module"
+        ></script>
+
     </body>
 </html>
 
